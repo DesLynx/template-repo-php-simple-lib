@@ -1,7 +1,7 @@
 # php-repo-template
 Template repository to bootstrap a new php repo with base CI tools
 
-PHP ^7.4 enforce by **composer.json**
+PHP ^7.4 or ^8.0 enforce by **composer.json**
 
 ## Installation
 In order for this package to work, you have to make sure following tools are discoverable on the command-line:
