@@ -1,0 +1,9 @@
+!.gitignore
+.php_cs.cache
+composer.lock
+phpstan.neon
+.idea/
+.idea/*
+/build
+/vendor
+vendor/*

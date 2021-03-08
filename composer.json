@@ -1,0 +1,30 @@
+{
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpro/grumphp": "^1.1",
+        "phpstan/phpstan": "^0.12.57",
+        "roave/security-advisories": "dev-master",
+        "phpstan/extension-installer": "^1.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan-phpunit": "^0.12.16",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyNamespace\\": "src/"
+        }
+    },
+    "scripts": {
+        "cs-fix": "vendor/friendsofphp/php-cs-fixer/php-cs-fixer --show-progress=estimating --using-cache=yes -v fix",
+        "cs-lint": "@cs-fix --dry-run",
+        "stan": "vendor/bin/phpstan analyse --no-progress",
+        "test": "composer dump-autoload && vendor/bin/phpunit tests",
+        "ci": [
+            "@cs-lint",
+            "@stan",
+            "@test"
+        ]
+    }
+}

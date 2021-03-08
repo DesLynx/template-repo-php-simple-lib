@@ -1,0 +1,28 @@
+grumphp:
+    ascii:
+        failed: failed.txt
+        succeeded: succeeded.txt
+    tasks:
+        git_blacklist:
+            keywords:
+                - "die("
+                - "var_dump("
+                - "exit;"
+            whitelist_patterns: [ ]
+            triggered_by: [ 'php' ]
+            regexp_type: G
+        git_commit_message:
+            allow_empty_message: false
+            enforce_capitalized_subject: false
+            enforce_no_subject_punctuations: false
+            enforce_no_subject_trailing_period: true
+            enforce_single_lined_subject: true
+            max_body_width: 72
+            max_subject_width: 60
+            matchers:
+                Please respect commit message convention: /^(revert|feat|fix|docs|style|refactor|perf|test|chore)(!)?(\(.+\))?(:)+( ).{1,50}/
+            case_insensitive: false
+        composer_script:
+            script: ci
+            triggered_by: [ 'php' ]
+            working_directory: ~
